@@ -1,4 +1,4 @@
-# jumpbox-contract
+# How to test app
 
 1. Download files from Hand-on
 2. Build container with command
