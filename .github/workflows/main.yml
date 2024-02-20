@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu:latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
@@ -27,4 +27,4 @@ jobs:
       uses: iyudesu/kubectl-action@master
       with:
         kube_config_data: ${{ secrets.KUBE_CONFIG_DATA }}
-        args: apply -f deployment.yaml -f service.yaml
+        args: apply -f pod.yaml -f deployment.yaml -f service.yaml
