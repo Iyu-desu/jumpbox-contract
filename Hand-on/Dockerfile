@@ -1,8 +1,9 @@
-FROM ubuntu:22.04
+FROM alpine:latest
 WORKDIR /app
 COPY . .
-RUN apt-get update && apt-get install -y python3.11 python3.11-dev python3-pip
-RUN pip install -r requirements.txt
+RUN apk add --no-cache python3 py3-pip
+RUN python3 -m venv /app/venv
+RUN . /app/venv/bin/activate && pip install -r requirements.txt
 RUN rm -rf /bin/cat
 RUN rm -rf /bin/touch
 RUN rm -rf /bin/ls
